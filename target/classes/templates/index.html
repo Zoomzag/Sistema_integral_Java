@@ -1,11 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Iniciar Sesión - TECNM Campus Chihuahua II</title>
+    <!-- Adaptado para Spring Boot Static -->
+    <link rel="icon" type="image/png" th:href="@{/images/LOGO TEC2 RED.png}">
+    <link rel="stylesheet" th:href="@{/css/Login_style.css}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        span{
+            color: white;
+        }
+        
+        .login-footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 12px;
+            opacity: 0.8;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Este es un proyecto de Spring Boot</h1>
+    <div id="wallpaper">
+        <video autoplay muted loop>
+            <!-- Adaptado para archivo estático de video -->
+            <source th:src="@{/images/tecnm.mp4}" type="video/mp4">
+        </video>
+        <div class="capa"></div>
+
+        <div class="login-wrapper">
+            <div class="login-logo">
+                <!-- Adaptado para imagen estática -->
+                <img th:src="@{/images/LOGO TEC2 RED.png}" alt="TECNM Logo">
+            </div>
+
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>TECNM Campus Chihuahua II</h1>
+                    <h2>Iniciar Sesión</h2>
+                </div>
+
+                <!-- En Spring Security, el formulario por defecto apunta a /login por POST -->
+                <form method="POST" th:action="@{/login}">
+
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" id="username" placeholder="Usuario" required
+                            autocomplete="username" autofocus>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="password" id="password" placeholder="Contraseña" required
+                            autocomplete="current-password">
+                        <i class="fas fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label>
+                            <input type="checkbox" name="remember-me">
+                            <span>Recordarme</span>
+                        </label>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <button type="submit" class="login-btn">Iniciar Sesión</button>
+
+                    <!-- Mensaje de error condicional si Spring Security detecta un parámetro ?error -->
+                    <div th:if="${param.error}" class="error-message">
+                        <p>Usuario o contraseña incorrectos. Por favor, intenta de nuevo.</p>
+                    </div>
+
+                    <!-- Mensaje de cierre de sesión si trae el parámetro ?logout -->
+                    <div th:if="${param.logout}" class="system-messages">
+                        <p>Has cerrado sesión exitosamente.</p>
+                    </div>
+                </form>
+
+                <div class="login-footer">
+                    <p>¿No tienes una cuenta? <a href="#">Contacta al administrador</a></p>
+                    <!-- Ajusta la ruta o el th:href hacia donde corresponda tu vista principal -->
+                    <p>¿Eres aspirante? <a th:href="@{/}">Solicita tu ficha aqui</a></p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2026 TECNM Campus Chihuahua II. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funcionalidad para mostrar/ocultar contraseña
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const passwordInput = document.getElementById('password');
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+
+            // Cambiar icono
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        // Limpiar errores al empezar a escribir
+        const inputs = document.querySelectorAll('input');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                const errorMessage = document.querySelector('.error-message');
+                if (errorMessage) {
+                    errorMessage.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>

@@ -9,5 +9,4 @@ class SistemaintegralApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

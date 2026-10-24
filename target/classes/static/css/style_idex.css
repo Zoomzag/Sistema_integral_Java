@@ -1,0 +1,81 @@
+/* Color personalizado similar al modo oscuro de DeepSeek */
+
+.navbar-custom {
+    background-color: #1a1d29 !important;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #e0e0e0 !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+@media (max-width: 768px) {
+    .nav-pills {
+        flex-direction: column;
+    }
+
+    .nav-pills .nav-link {
+        margin: 0.2rem 0;
+    }
+}
+
+/* ====== GRID RESPONSIVO ====== */
+.parent {
+    display: grid;
+    gap: 30px; /* separación entre cards */
+    justify-content: center;
+    align-items: start;
+    padding: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* Centrar las cards dentro de cada celda */
+.parent > div {
+    display: flex;
+    justify-content: center;
+}
+
+/* ==== TARJETAS ==== */
+.card {
+    background-color: #1a1d29 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.card .btn {
+    border-radius: 20px !important;
+    background-color: #28a745 !important;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.card .btn:hover {
+    background-color: #218838 !important;
+}
+.card-img-top {
+    width: 100%;
+    height: 180px; /* puedes ajustar a 200px o 220px si quieres más alto */
+    object-fit: cover; /* recorta de forma proporcional */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

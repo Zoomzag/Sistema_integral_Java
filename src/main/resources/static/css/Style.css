@@ -1,0 +1,233 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+        /* Color personalizado similar al modo oscuro de DeepSeek */
+        .navbar-custom {
+            background-color: #1a1d29 !important;
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link {
+            color: #ffffff !important;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #e0e0e0 !important;
+        }
+
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
+
+.main-content {
+    padding: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-radius: 20px;
+}
+
+.stats-card {
+    text-align: center;
+    padding: 15px;
+
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+/* Colores para las tarjetas de estadísticas ingnorar las etiquetas hubo cambios*/
+.stats-card.blue { background-color: #2a2e3f; }
+.stats-card.green { background-color: #2a2e3f; }
+.stats-card.orange { background-color: #2a2e3f; }
+.stats-card.red { background-color: #2a2e3f; }
+
+.stats-card i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.stats-card .number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.table{
+    border-radius: 20px;
+}
+
+.table th {
+    background-color: #e9ecef;
+}
+
+/* Estilos para la barra de navegación horizontal */
+.nav-pills .nav-link {
+    color: #495057;
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    border-radius: 20px;
+}
+
+.nav-pills .nav-link.active {
+ background-color: #1a1d29 !important;
+    color: white;
+    border-radius: 20px;
+}
+
+.nav-pills .nav-link:hover:not(.active) {
+    background-color: #e9ecef;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .nav-pills {
+        flex-direction: column;
+    }
+    
+    .nav-pills .nav-link {
+        margin: 0.2rem 0;
+    }
+}
+
+/* ==== Estilos personalizados solicitados ==== */
+
+/* Tablas con borde más redondeado y color personalizado */
+.table {
+    border-collapse: separate !important;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #1a1d29; /* mismo color que la navbar */
+    color: white; /* texto blanco para contraste */
+}
+
+/* Encabezados de las tablas */
+.table thead th {
+    background-color: #2a2e3f; /* tono ligeramente más claro que la tabla */
+    color: #ffffff;
+    border: none;
+}
+
+/* Celdas de la tabla */
+.table tbody td {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Fila al pasar el cursor */
+.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Bordes interiores suaves */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Botones personalizados */
+.btn {
+    border-radius: 20px !important;  /* esquinas redondeadas */
+    background-color: #28a745 !important; /* verde */
+    border: none;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838 !important; /* verde más oscuro al pasar */
+}
+/* ==== Estilos coherentes para todas las tarjetas (cards) ==== */
+
+/* Fondo y bordes coherentes con el tema oscuro */
+.card {
+    background-color: #1a1d29 !important; /* mismo tono que la navbar */
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    overflow: hidden;
+}
+
+/* Encabezados dentro de las cards */
+.card-header {
+    background-color: #2a2e3f !important; /* un poco más claro que el fondo principal */
+    color: #ffffff !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+/* Cuerpo de las cards */
+.card-body {
+    background-color: #1a1d29 !important;
+    color: #ffffff !important;
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+
+/* Tablas dentro de cards (mantienen coherencia visual) */
+.card .table {
+    background-color: #1a1d29 !important;
+    border-radius: 10px !important;
+    color: #ffffff;
+}
+
+/* Corrige títulos y textos dentro de cards */
+.card h5, 
+.card h2, 
+.card h3, 
+.card p {
+    color: #ffffff !important;
+}
+
+/* Si usas variantes como bg-primary, bg-secondary, bg-info, las neutralizamos */
+.bg-primary,
+.bg-secondary,
+.bg-info {
+    background-color: #2a2e3f !important;
+    color: #ffffff !important;
+}
+
+
+/* Color personalizado similar al modo oscuro de DeepSeek */
+
+.navbar-custom {
+    background-color: #1a1d29 !important;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .nav-link {
+    color: #ffffff !important;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #e0e0e0 !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+@media (max-width: 768px) {
+    .nav-pills {
+        flex-direction: column;
+    }
+
+    .nav-pills .nav-link {
+        margin: 0.2rem 0;
+    }
+}
+

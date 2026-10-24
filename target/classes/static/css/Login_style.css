@@ -1,0 +1,262 @@
+/* Estilos CSS mejorados */
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#wallpaper {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.capa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 27, 39, 0.7) 0%, rgba(0, 41, 71, 0.7) 100%);
+    opacity: 0.8;
+}
+
+.login-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 420px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-logo {
+    margin-bottom: 20px;
+}
+
+.login-logo img {
+    height: 80px;
+    width: auto;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header h1 {
+    font-size: 22px;
+    margin: 0 0 5px 0;
+    color: white;
+    font-weight: 600;
+}
+
+.login-header h2 {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+    font-weight: 400;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 5px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+    border-color: #0979b0;
+    box-shadow: 0 0 0 2px rgba(9, 121, 176, 0.3);
+}
+
+.input-group i {
+    color: white;
+    margin-right: 10px;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    padding: 12px 0;
+    width: 100%;
+    color: white;
+    font-size: 16px;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+    outline: none;
+}
+
+.toggle-password {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.remember-forgot label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-forgot input {
+    margin-right: 5px;
+}
+
+.remember-forgot a {
+    color: #97d0ff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.login-btn {
+    background-color: #0979b0;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #004173;
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.error-message p {
+    margin: 0;
+    color: #ff6b6b;
+    font-size: 14px;
+}
+
+.system-messages {
+    margin-top: 15px;
+}
+
+.system-messages p {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.system-messages .success {
+    background: rgba(0, 255, 0, 0.1);
+    color: #4caf50;
+}
+
+.system-messages .error {
+    background: rgba(255, 0, 0, 0.1);
+    color: #f44336;
+}
+
+.system-messages .warning {
+    background: rgba(255, 165, 0, 0.1);
+    color: #ff9800;
+}
+
+.system-messages .info {
+    background: rgba(0, 0, 255, 0.1);
+    color: #2196f3;
+}
+
+.login-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: white;
+}
+
+.login-footer a {
+    
+    color: #97d0ff;
+    text-decoration: none;
+}
+
+.login-footer a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 12px;
+    opacity: 0.8;
+    color: white; 
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-wrapper {
+        padding: 10px;
+    }
+
+    .login-container {
+        padding: 20px;
+    }
+
+    .remember-forgot {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .remember-forgot a {
+        align-self: flex-end;
+    }
+}

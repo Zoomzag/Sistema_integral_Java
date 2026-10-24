@@ -1,0 +1,69 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #34495e;
+    --accent: #3498db;
+    --light: #ecf0f1;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --text: #2c3e50;
+    --border: #bdc3c7;
+}
+
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.navbar {
+    background-color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    background-color: var(--secondary);
+    color: white;
+    height: calc(100vh - 76px);
+    position: sticky;
+    top: 76px;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    padding: 12px 20px;
+    margin: 4px 10px;
+    border-radius: 4px;
+}
+
+.mainIndex-body {
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-items: center;
+    background-position: center;
+    grid-row: 2 / 2;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* recorta bien la imagen */
+    opacity: 50%;   /* controlas transparencia */
+    z-index: -1;  /* la pones detras de todo */
+}
+
+.M2-Index-Body{
+    padding: 20px 20px 20px 20px;
+}
+
+.mainIndex-body background-image {
+    filter: blur(8px);  
+    max-width: 50%;
+    height: auto;
+}
