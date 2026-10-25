@@ -9,8 +9,61 @@
                                                              |___/                                                                          
 ```
 
-Este es un sistema integral institucional inspirado en el antiguo SII que manejaba el Instituto Tecnológico de Chihuahua Campus II, el cual contaba con características que resultaban de gran ayuda para el personal administrativo, docente y el alumnado. El proyecto aún no está terminado, ya que corresponde a una migración del proyecto original desarrollado en Django con Python. A diferencia de aquel, esta nueva versión está desarrollada con el marco de trabajo Spring Boot en Java, e incluye características distintas al proyecto original, así como nuevos retos, problemas y soluciones.
+# Sistema Integral Institucional
 
-El proyecto fue desarrollado enteramente en Java 21 utilizando la versión más reciente y estable del framework hasta la fecha, la 3.2.x (o la versión correspondiente de Spring Boot, ajustando según corresponda), junto con las siguientes dependencias para lograr una correcta migración entre tecnologías: Spring Web, Spring Data JPA, Spring Security, MySQL Driver, Flyway Migration, Lombok, Spring Boot DevTools y Thymeleaf.
+Sistema integral institucional inspirado en el antiguo SII del **Instituto Tecnológico de Chihuahua Campus II**, cuyas funcionalidades resultaban de gran utilidad para el personal administrativo, el personal docente y el alumnado.
 
-Asimismo, el proyecto fue diseñado teniendo en mente una base de datos en MySQL, la cual almacena información de diversos módulos como gestión académica, horarios, control escolar, evaluaciones, gestión financiera, biblioteca, comunicación y servicios institucionales, entre otros.
+> **Estado del proyecto:** en desarrollo. Esta versión corresponde a la migración del proyecto original, construido con **Django (Python)**, hacia **Spring Boot (Java)**. Además de replicar las capacidades del sistema anterior, incorpora nuevas funcionalidades y plantea nuevos retos técnicos y soluciones.
+
+## Tecnologías
+
+El proyecto está desarrollado en **Java 21** con **Spring Boot 3.2.x**, e integra las siguientes dependencias:
+
+| Dependencia | Propósito |
+|---|---|
+| Spring Web | Capa web y controladores |
+| Spring Data JPA | Persistencia y acceso a datos |
+| Spring Security | Autenticación y autorización |
+| MySQL Driver | Conexión con la base de datos |
+| Flyway Migration | Control de versiones del esquema de base de datos |
+| Lombok | Reducción de código repetitivo |
+| Spring Boot DevTools | Agilización del desarrollo |
+| Thymeleaf | Motor de plantillas para las vistas |
+
+## Módulos del sistema
+
+| Módulo | Funcionalidades |
+|---|---|
+| Autenticación y seguridad | Inicio y cierre de sesión, redirección según tipo de usuario, control de permisos |
+| Administración académica | Panel general, gestión de planes de estudio (carreras), control de horarios, evaluaciones y control de asistencia, con alertas por baja calificación e inasistencias |
+| Gestión de alumnos | Inscripción, reinscripción, expediente (calificaciones y asistencias) y generación de reportes |
+| Gestión de docentes | Asignación de materias y grupos, horarios y evaluación del desempeño docente |
+| Control administrativo y financiero | Becas, pagos, conceptos de pago y estados de cuenta |
+| Biblioteca | Catálogo de materiales, préstamos, devoluciones, reservaciones y recursos digitales |
+| Extras | Trámites, evaluación docente y actividades extraescolares |
+| Comunicación | Avisos, mensajes y calendario de eventos |
+| Indicadores y reportes | Indicadores institucionales y reportes estadísticos |
+
+## Base de datos
+
+El sistema utiliza **MySQL** como gestor de base de datos, diseñada para almacenar la información de los distintos módulos institucionales. Las principales entidades son:
+
+- **Académico:** carreras, asignaturas, grupos, alumnos, docentes, horarios, calificaciones, asistencias, cargas docentes, disponibilidad de docentes y evaluaciones docentes.
+- **Financiero:** becas, conceptos de pago, estados de cuenta y pagos.
+- **Biblioteca:** materiales, préstamos y reservaciones.
+- **Comunicación:** avisos, mensajes y eventos de calendario.
+- **Seguimiento:** alertas, indicadores, datos de indicadores y reportes estadísticos.
+- **Usuarios y documentos:** usuarios y documentos de alumnos.
+
+## Migración desde el proyecto original
+
+El proyecto original utilizaba Django 5.2 con MySQL. A continuación se muestra la equivalencia entre sus componentes y los de esta versión:
+
+| Django (original) | Spring Boot (esta versión) |
+|---|---|
+| `models.py` | Entidades JPA (`@Entity`) y migraciones de Flyway |
+| `views.py` | Controladores (`@Controller` / `@RestController`) y servicios |
+| `urls.py` | Mapeos de rutas (`@RequestMapping`, `@GetMapping`, `@PostMapping`) |
+| Plantillas de Django | Plantillas de Thymeleaf |
+| `django.contrib.auth` | Spring Security |
+| `settings.py` | `application.properties` / `application.yml` |
