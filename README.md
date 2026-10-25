@@ -13,11 +13,7 @@
 
 Sistema integral institucional inspirado en el antiguo SII del **Instituto Tecnológico de Chihuahua Campus II**, cuyas funcionalidades resultaban de gran utilidad para el personal administrativo, el personal docente y el alumnado.
 
-<<<<<<< HEAD
 > **Estado del proyecto:** en desarrollo. Esta versión corresponde a la migración del proyecto original, construido con **Django (Python)**, hacia **Spring Boot (Java)**. Además de replicar las capacidades del sistema anterior, incorpora nuevas funcionalidades y plantea nuevos retos técnicos y soluciones.
-=======
-> **Estado del proyecto:** en desarrollo. Esta versión corresponde a la migración del proyecto original, construido con Django (Python), hacia **Spring Boot (Java)**. Además de replicar las capacidades del sistema anterior, incorpora nuevas funcionalidades y plantea nuevos retos técnicos y soluciones.
->>>>>>> 4c939cb195261151ae4d670865a97103ab7b89a9
 
 ## Tecnologías
 
@@ -34,7 +30,6 @@ El proyecto está desarrollado en **Java 21** con **Spring Boot 3.2.x**, e integ
 | Spring Boot DevTools | Agilización del desarrollo |
 | Thymeleaf | Motor de plantillas para las vistas |
 
-<<<<<<< HEAD
 ## Módulos del sistema
 
 | Módulo | Funcionalidades |
@@ -72,18 +67,3 @@ El proyecto original utilizaba Django 5.2 con MySQL. A continuación se muestra 
 | Plantillas de Django | Plantillas de Thymeleaf |
 | `django.contrib.auth` | Spring Security |
 | `settings.py` | `application.properties` / `application.yml` |
-=======
-## Base de datos
-
-El sistema utiliza **MySQL** como gestor de base de datos, diseñada para almacenar la información de los distintos módulos institucionales:
-
-- Gestión académica
-- Horarios
-- Control escolar
-- Evaluaciones
-- Gestión financiera
-- Biblioteca
-- Comunicación
-- Servicios institucionales
-- Entre otros
->>>>>>> 4c939cb195261151ae4d670865a97103ab7b89a9
